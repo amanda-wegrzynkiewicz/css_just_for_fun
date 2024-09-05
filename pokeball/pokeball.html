@@ -1,0 +1,91 @@
+<div class="parent">
+	<div class="content">
+		<div class="first"></div>
+		<div class="last">
+			<div>
+				<div class="separator"></div>
+			</div>
+		</div>
+	</div>
+	<div class="circle-grid">
+		<div></div>
+		<div class="circle"></div>
+		<div></div>
+	</div>
+</div>
+<style>
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	.parent {
+		display: grid;
+		position: relative;
+		place-items: center;
+		background-color: #6CB3A9;
+		height: 100vh;
+	}
+	.content div {
+		width: 50vw;
+		height: 33.3vh;
+	}
+	.first {
+		background-color: #D25B70;
+		border-radius: 100px 100px 0 0;
+	}
+	.last {
+		position: relative;
+		background-color: #FFFFFF;
+		border-radius: 0 0 100px 100px;
+	}
+	.last > div {
+		top: -10px;
+		position: absolute;
+	}
+
+	.separator {
+		position: relative;
+		max-height: 20px;
+		background-color: #781728;
+	}
+
+	.separator::before,
+	.separator::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-color: #6CB3A9;
+	}
+
+  	.separator::before {
+		left: 0;
+		right: 190px;
+	}
+
+	.separator::after {
+		left: 190px;
+		right: 0;
+	}
+
+	.circle-grid {
+		position: absolute;
+		display: flex;
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 170px;
+		height: 70px;
+	}
+
+	.circle-grid > div {
+		flex: 1;
+	}
+
+	.circle {
+		background-color: #F6DF96;
+      	border: 10px solid #781728;
+		border-radius: 50%;
+	}
+</style>
